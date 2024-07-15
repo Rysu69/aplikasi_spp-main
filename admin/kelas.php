@@ -4,8 +4,8 @@
 <table class="table table-striped table-bordered">
     <tr class="fw-bold">
         <td>No</td>
+        <td>Kelas</td>
         <td>Nama Kelas</td>
-        <td>Kompetensi Keahlian</td>
         <td>Edit</td>
         <td>Hapus</td>  
     </tr>
@@ -17,8 +17,8 @@
     foreach($query as $data){?>
         <tr>
             <td><?= $no++; ?></td>
+            <td><?= $data['kelas']; ?></td>
             <td><?= $data['nama_kelas']; ?></td>
-            <td><?= $data['kompetensi_keahlian']; ?></td>
             <td>
                 <a href="?url=edit-kelas&id_kelas=<?= $data['id_kelas'] ?>" class='btn btn-warning'>EDIT</a>
             </td>

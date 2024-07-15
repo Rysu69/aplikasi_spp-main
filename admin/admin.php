@@ -38,6 +38,7 @@ if($_SESSION['level']!='admin') {
         <a href="admin.php" class="btn btn-primary"> Administrator</a>
         <a href="admin.php?url=spp" class="btn btn-primary"> SPP</a>
         <a href="admin.php?url=kelas" class="btn btn-primary"> Kelas</a>
+        <a href="admin.php?url=jurusan" class="btn btn-primary"> Jurusan</a>
         <a href="admin.php?url=siswa" class="btn btn-primary"> Siswa</a>
         <a href="admin.php?url=petugas" class="btn btn-primary"> Petugas</a>
         <a href="admin.php?url=pembayaran" class="btn btn-primary"> Pembayaran</a>
