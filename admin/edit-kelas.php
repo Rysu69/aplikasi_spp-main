@@ -9,9 +9,9 @@ $sql = "select*from kelas where id_kelas='$id_kelas'";
 <a href="?url=kelas" class="btn btn-primary"> KEMBALI </a>
 <hr>
 <form action="?url=proses-edit-kelas&id_kelas=<?= $id_kelas; ?>" method="post">
-    <div class="form-group mb-2">
-        <label>Nama kelas</label>
-        <input value="<?= $data['nama_kelas'] ?>" type="text" name="nama_kelas"class="form-control" required>
+        <div class="form-group mb-2">
+        <label>kelas</label>
+        <input value="<?= $data['kelas'] ?>" type="number" name="kelas"class="form-control" required>
     </div>
     <div class="form-group">
         <button class="btn btn-success" type="submit"> SIMPAN </button>

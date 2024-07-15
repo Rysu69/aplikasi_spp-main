@@ -5,20 +5,18 @@
     <tr class="fw-bold">
         <td>No</td>
         <td>Kelas</td>
-        <td>Nama Kelas</td>
         <td>Edit</td>
         <td>Hapus</td>  
     </tr>
     <?php 
     include'../koneksi.php';
     $no = 1;
-    $sql = "select*from kelas order by id_kelas desc";
+    $sql = "select*from kelas order by id_kelas asc";
     $query = mysqli_query($koneksi, $sql);
     foreach($query as $data){?>
         <tr>
             <td><?= $no++; ?></td>
             <td><?= $data['kelas']; ?></td>
-            <td><?= $data['nama_kelas']; ?></td>
             <td>
                 <a href="?url=edit-kelas&id_kelas=<?= $data['id_kelas'] ?>" class='btn btn-warning'>EDIT</a>
             </td>
