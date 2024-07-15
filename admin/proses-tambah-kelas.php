@@ -1,9 +1,9 @@
 <?php 
 
-$nama_kelas = $_POST['nama_kelas'];
+$kelas = $_POST['kelas'];
 
 include'../koneksi.php';
-$sql = "INSERT INTO kelas(nama_kelas) VALUES('$nama_kelas')";
+$sql = "INSERT INTO kelas(kelas) VALUES('$kelas')";
 $query = mysqli_query($koneksi,$sql);
 if ($query){
     header("Location:?url=kelas");

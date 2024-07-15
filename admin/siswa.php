@@ -8,27 +8,43 @@
         <td>NIS</td>
         <td>Nama</td>
         <td>Kelas</td>
+        <td>Jurusan</td>
         <td>Alamat</td>
         <td>No Telepon</td>
         <td>SPP</td>
+        <td>Naik Kelas</td>
         <td>Edit</td>
         <td>Hapus</td>
     </tr>
     <?php 
     include'../koneksi.php';
     $no = 1;
-    $sql = "select*from siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp ORDER BY nama ASC";
+    $sql = "select*from siswa,spp,kelas,jurusan WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_jurusan=jurusan.id_jurusan AND siswa.id_spp=spp.id_spp ORDER BY nama ASC";
     $query = mysqli_query($koneksi, $sql);
-    foreach($query as $data){?>
+    foreach($query as $data){
+        $naikkelas = $data['kelas'];
+        ?>
         <tr>
             <td><?= $no++; ?></td>
             <td><?= $data['nisn']; ?></td>
             <td><?= $data['nis']; ?></td>
             <td><?= $data['nama']; ?></td>
-            <td><?= $data['nama_kelas']; ?></td>
+            <td><?= $data['kelas']; ?></td>
+            <td><?= $data['kompetensi_keahlian']; ?></td>
             <td><?= $data['alamat']; ?></td>
             <td><?= $data['no_telp']; ?></td>
             <td><?= $data['tahun']; ?> - <?= number_format($data['nominal'],2,',','.'); ?></td>
+             <td>
+    <?php if ($naikkelas == 3): ?>
+        <span class='badge text-bg-success'> Lulus </span>
+    <?php else: ?>
+        <form action="?url=update_kelas" method="post">
+            <input type="hidden" name="nisn" value="<?= $data['nisn'] ?>">
+            <button type="submit" class="btn btn-primary">Naik Kelas</button>
+        </form>
+    <?php endif; ?>
+</td>
+
             <td>
                 <a href="?url=edit-siswa&nisn=<?= $data['nisn'] ?>" class='btn btn-warning'>EDIT</a>
             </td>

@@ -20,10 +20,23 @@
             <option value=""> Pilih Kelas </option>
             <?php 
                 include'../koneksi.php';
-                $kelas = mysqli_query($koneksi,"SELECT*FROM kelas ORDER BY nama_kelas ASC");
+                $kelas = mysqli_query($koneksi,"SELECT*FROM kelas ORDER BY kelas ASC");
                 foreach($kelas as $data_kelas){
                     ?>
-                <option value="<?= $data_kelas['id_kelas'] ?>"> <?= $data_kelas['nama_kelas'] ?></option>
+                <option value="<?= $data_kelas['id_kelas'] ?>"> <?= $data_kelas['kelas'] ?></option>
+                <?php }?>
+        </select>
+    </div>
+    <div class="form-group mb-2">
+        <label>jurusan</label>
+        <select name="id_jurusan" class="form-control" required>
+            <option value=""> Pilih jurusan </option>
+            <?php 
+                include'../koneksi.php';
+                $jurusan = mysqli_query($koneksi,"SELECT*FROM jurusan ORDER BY kompetensi_keahlian ASC");
+                foreach($jurusan as $data_jurusan){
+                    ?>
+                <option value="<?= $data_jurusan['id_jurusan'] ?>"> <?= $data_jurusan['kompetensi_keahlian'] ?></option>
                 <?php }?>
         </select>
     </div>

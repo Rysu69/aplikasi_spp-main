@@ -24,13 +24,13 @@ $data = mysqli_fetch_array($query);
     <div class="form-group mb-2">
         <label>Kelas</label>
         <select name="id_kelas" class="form-control" required>
-            <option value="<?= $data['id_kelas'] ?>"> <?= $data['nama_kelas'] ?> </option>
+            <option value="<?= $data['id_kelas'] ?>"> <?= $data['kelas'] ?> </option>
             <?php
             include '../koneksi.php';
-            $kelas = mysqli_query($koneksi, "SELECT*FROM kelas ORDER BY nama_kelas ASC");
+            $kelas = mysqli_query($koneksi, "SELECT*FROM kelas ORDER BY kelas ASC");
             foreach($kelas as $data_kelas){
             ?>
-            <option value="<?= $data_kelas['id_kelas'] ?>"> <?= $data_kelas['nama_kelas']; ?> </option>
+            <option value="<?= $data_kelas['id_kelas'] ?>"> <?= $data_kelas['kelas']; ?> </option>
             <?php } ?>
         </select>
     </div>
