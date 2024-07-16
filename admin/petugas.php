@@ -1,7 +1,8 @@
 <h5>Halaman Data Petugas.</h5>
 <a href="?url=tambah-petugas" class="btn btn-primary"> Tambah Petugas </a>
 <hr>
-<table class="table table-striped table-bordered">
+<table class="table table-bordered table-hover">
+            <thead class="table-secondary">
     <tr class="fw-bold">
         <td>No</td>
         <td>Username</td>
@@ -11,7 +12,8 @@
         <td>Edit</td>
         <td>Hapus</td>
     </tr>
-    <?php 
+   </thead> 
+   <?php 
     include'../koneksi.php';
     $no = 1;
     $sql = "select*from petugas order by id_petugas desc";

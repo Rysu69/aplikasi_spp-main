@@ -4,7 +4,8 @@ $nisn = $_GET['nisn'];
 <h5>History Pembayaran.</h5>
 <a href="?url=pembayaran" class="btn btn-primary"> KEMBALI </a>
 <hr>
-<table class="table table-striped table-bordered">
+        <table class="table table-bordered table-hover">
+        <thead class="table-secondary">
     <tr class="fw-bold">
         <td>No</td>
         <td>NISN</td>
@@ -19,7 +20,8 @@ $nisn = $_GET['nisn'];
         <td>Edit</td>
         <td>Hapus</td>
     </tr>
-    <?php 
+   </thead> 
+   <?php 
     include'../koneksi.php';
     $no = 1;
         $sql = "SELECT*FROM pembayaran,siswa,kelas,jurusan,spp,petugas WHERE pembayaran.nisn=siswa.nisn AND siswa.id_kelas=kelas.id_kelas AND siswa.id_jurusan=jurusan.id_jurusan AND pembayaran.id_spp=spp.id_spp AND pembayaran.id_petugas=petugas.id_petugas AND pembayaran.nisn='$nisn' ORDER BY tgl_bayar DESC";

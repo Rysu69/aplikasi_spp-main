@@ -8,10 +8,10 @@ $data = mysqli_fetch_array($query);
 <h5>Halaman Edit Data Siswa.</h5>
 <a href="?url=siswa" class="btn btn-primary">KEMBALI</a>
 <hr>
-<form method="post" action="?url=proses-edit-siswa&nisn=<?= $nisn; ?>">
+<form method="post" action="?url=proses-edit-siswa&old_nisn=<?= $nisn; ?>">
     <div class="form-group mb-2">
         <label>NISN</label>
-        <input value="<?= $data['nisn'] ?>" type="number" name="nisn" class="form-control" required>
+        <input value="<?= $data['nisn'] ?>" readonly type="number" name="nisn" class="form-control" required>
     </div>
     <div class="form-group mb-2">
         <label>NIS</label>

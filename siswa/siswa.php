@@ -44,7 +44,7 @@ if(empty($_SESSION['nisn'])) {
             
             $file = @$_GET['url'];
             if(empty($file)){
-                echo"<h4>Selamat Datang di halaman Siswa. </h4>";
+                echo"<h4>Selamat Datang di History Pembayaran Siswa. </h4>";
                 // echo"Aplikasi Pembayaran SPP digunakan untuk mempermudah dalam mencatat pembayaran siswa / siswi di sekolah";
                 echo"<hr>";
                 include "history-pembayaran.php";

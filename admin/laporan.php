@@ -1,7 +1,8 @@
 <h5>Laporan Pembayaran SPP.</h5>
 <a href="cetak-laporan.php" class="btn btn-primary"> Cetak Laporan </a>
 <hr>
-<table class="table table-striped table-bordered">
+        <table class="table table-bordered table-hover">
+        <thead class="table-secondary">
     <tr class="fw-bold">
         <td>No</td>
         <td>NISN</td>
@@ -16,6 +17,7 @@
         <td>Edit</td>
         <td>Hapus</td>
     </tr>
+   </thead>
     <?php 
     include'../koneksi.php';
     $no = 1;

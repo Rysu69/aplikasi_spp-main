@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data SPP</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-</head>
-<body style="background-color: #f8f9fa;">
-
-    <div class="container mt-5">
-        
         <h5>Halaman Data SPP.</h5>
         <a href="?url=tambah-spp" class="btn btn-primary"> Tambah SPP </a>
         <hr>
-        <table class="table table-striped table-bordered">
+        <table class="table table-bordered table-hover">
+        <thead class="table-secondary">
             <tr class="fw-bold">
                 <td>No</td>
                 <td>Tahun</td>
@@ -21,6 +10,7 @@
                 <td>Edit</td>
                 <td>Hapus</td>
             </tr>
+            </thead>
             <?php 
             include '../koneksi.php';
             $no = 1;

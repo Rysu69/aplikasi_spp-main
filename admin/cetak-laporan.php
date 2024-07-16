@@ -4,7 +4,8 @@ header("Content-Disposition: attachment; filename=Laporan-Pembayaran-SPP.xls");
 ?>
 <h5>Laporan Pembayaran SPP.</h5>
 <hr>
-<table border="1" class="table table-striped table-bordered">
+        <table class="table table-bordered table-hover">
+        <thead class="table-secondary">
     <tr class="fw-bold">
         <td>No</td>
         <td>NISN</td>
@@ -17,6 +18,7 @@ header("Content-Disposition: attachment; filename=Laporan-Pembayaran-SPP.xls");
         <td>Tanggal Bayar</td>
         <td>Petugas</td>
     </tr>
+    </thead>
     <?php 
     include'../koneksi.php';
     $no = 1;

@@ -4,8 +4,8 @@ $nisn = $_GET['nisn'];
 <h5>History Pembayaran.</h5>
 <a href="?url=pembayaran" class="btn btn-primary"> KEMBALI </a>
 <hr>
-<table class="table table-striped table-bordered">
-    <tr class="fw-bold">
+        <table class="table table-bordered table-hover">
+        <thead class="table-secondary">
         <td>No</td>
         <td>NISN</td>
         <td>Nama</td>
@@ -19,6 +19,7 @@ $nisn = $_GET['nisn'];
         <td>Edit</td>
         <td>Hapus</td>
     </tr>
+    </thead>
     <?php 
     include'../koneksi.php';
     $no = 1;

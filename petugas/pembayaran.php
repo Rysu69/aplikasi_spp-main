@@ -1,7 +1,7 @@
-<h5>Halaman Pilih Data Siswa Untuk Pembayaran.</h5>
+<h5>Halaman Pembayaran Siswa.</h5>
 <hr>
-<table class="table table-striped table-bordered">
-    <tr class="fw-bold">
+<table class="table table-bordered table-hover">
+        <thead class="table-secondary"> 
         <td>No</td>
         <td>NISN</td>
         <td>Nama</td>
@@ -14,6 +14,7 @@
         <td>Status</td>
         <td>History</td>
     </tr>
+        </thead>
     <?php 
     include'../koneksi.php';
     $no = 1;

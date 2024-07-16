@@ -1,13 +1,15 @@
 <h5>Halaman Data jurusan.</h5>
 <a href="?url=tambah-jurusan" class="btn btn-primary"> Tambah Jurusan </a>
 <hr>
-<table class="table table-striped table-bordered">
+        <table class="table table-bordered table-hover">
+        <thead class="table-secondary">
     <tr class="fw-bold">
         <td>No</td>
         <td>Nama Jurusan</td>
         <td>Edit</td>
         <td>Hapus</td>  
     </tr>
+    </thead>
     <?php 
     include'../koneksi.php';
     $no = 1;
