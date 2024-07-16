@@ -4,27 +4,35 @@ header("Content-Disposition: attachment; filename=Laporan-Pembayaran-SPP.xls");
 ?>
 <h5>Laporan Pembayaran SPP.</h5>
 <hr>
-        <table class="table table-bordered table-hover">
-        <thead class="table-secondary">
-    <tr class="fw-bold">
-        <td>No</td>
-        <td>NISN</td>
-        <td>Nama</td>
-        <td>Kelas</td>
-        <td>jurusan</td>
-        <td>Tahun SPP</td>
-        <td>Nominal Dibayar</td>
-        <td>Sudah Dibayar</td>
-        <td>Tanggal Bayar</td>
-        <td>Petugas</td>
-    </tr>
+<table border="1">
+    <thead style="background-color: #f2f2f2;">
+        <tr>
+            <th>No</th>
+            <th>NISN</th>
+            <th>Nama</th>
+            <th>Kelas</th>
+            <th>Jurusan</th>
+            <th>Tahun SPP</th>
+            <th>Nominal Dibayar</th>
+            <th>Sudah Dibayar</th>
+            <th>Tanggal Bayar</th>
+            <th>Petugas</th>
+        </tr>
     </thead>
+    <tbody>
     <?php 
-    include'../koneksi.php';
+    include '../koneksi.php';
     $no = 1;
-        $sql = "SELECT*FROM pembayaran,siswa,kelas,jurusan,spp,petugas WHERE pembayaran.nisn=siswa.nisn AND siswa.id_kelas=kelas.id_kelas AND siswa.id_jurusan=jurusan.id_jurusan AND pembayaran.id_spp=spp.id_spp AND pembayaran.id_petugas=petugas.id_petugas ORDER BY tgl_bayar DESC";
+    $sql = "SELECT pembayaran.*, siswa.nisn, siswa.nama, kelas.kelas, jurusan.kompetensi_keahlian, spp.tahun, spp.nominal, petugas.nama_petugas 
+            FROM pembayaran 
+            JOIN siswa ON pembayaran.id_siswa = siswa.id_siswa 
+            JOIN kelas ON siswa.id_kelas = kelas.id_kelas 
+            JOIN jurusan ON siswa.id_jurusan = jurusan.id_jurusan 
+            JOIN spp ON pembayaran.id_spp = spp.id_spp 
+            JOIN petugas ON pembayaran.id_petugas = petugas.id_petugas 
+            ORDER BY tgl_bayar DESC";
     $query = mysqli_query($koneksi, $sql);
-    foreach($query as $data){
+    while($data = mysqli_fetch_array($query)){
         ?>
         <tr>
             <td><?= $no++; ?></td>
@@ -33,10 +41,11 @@ header("Content-Disposition: attachment; filename=Laporan-Pembayaran-SPP.xls");
             <td><?= $data['kelas']; ?></td>
             <td><?= $data['kompetensi_keahlian']; ?></td>
             <td><?= $data['tahun']; ?></td>
-            <td><?= number_format($data['nominal'],2,',','.'); ?></td>
-            <td><?= number_format($data['jumlah_bayar'],2,',','.'); ?></td>
+            <td><?= number_format($data['nominal'], 2, ',', '.'); ?></td>
+            <td><?= number_format($data['jumlah_bayar'], 2, ',', '.'); ?></td>
             <td><?= $data['tgl_bayar']; ?></td>
             <td><?= $data['nama_petugas']; ?></td>
         </tr>
     <?php } ?>
+    </tbody>
 </table>

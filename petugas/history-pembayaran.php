@@ -1,8 +1,8 @@
 <?php 
-$nisn = $_GET['nisn'];
+$id_siswa = $_GET['id_siswa'];
 ?>
 <h5>History Pembayaran.</h5>
-<a href="?url=pembayaran" class="btn btn-primary"> KEMBALI </a>
+<a href="?url=pembayaran&id_siswa" class="btn btn-primary"> KEMBALI </a>
 <hr>
         <table class="table table-bordered table-hover">
         <thead class="table-secondary">
@@ -23,7 +23,7 @@ $nisn = $_GET['nisn'];
     <?php 
     include'../koneksi.php';
     $no = 1;
-        $sql = "SELECT*FROM pembayaran,siswa,kelas,jurusan,spp,petugas WHERE pembayaran.nisn=siswa.nisn AND siswa.id_kelas=kelas.id_kelas AND siswa.id_jurusan=jurusan.id_jurusan AND pembayaran.id_spp=spp.id_spp AND pembayaran.id_petugas=petugas.id_petugas AND pembayaran.nisn='$nisn' ORDER BY tgl_bayar DESC";
+        $sql = "SELECT*FROM pembayaran,siswa,kelas,jurusan,spp,petugas WHERE pembayaran.id_siswa=siswa.id_siswa AND siswa.id_kelas=kelas.id_kelas AND siswa.id_jurusan=jurusan.id_jurusan AND pembayaran.id_spp=spp.id_spp AND pembayaran.id_petugas=petugas.id_petugas AND pembayaran.id_siswa='$id_siswa' ORDER BY tgl_bayar DESC";
     $query = mysqli_query($koneksi, $sql);
     foreach($query as $data){
         ?>

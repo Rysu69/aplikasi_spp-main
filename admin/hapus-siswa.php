@@ -1,9 +1,9 @@
 <?php 
 
-$nisn = $_GET['nisn'];
+$id_siswa = $_GET['id_siswa'];
 
 include'../koneksi.php';
-$sql = "DELETE FROM siswa WHERE nisn='$nisn'";
+$sql = "DELETE FROM siswa WHERE id_siswa='$id_siswa'";
 $query = mysqli_query($koneksi,$sql);
 if ($query){
     header("Location:?url=siswa");

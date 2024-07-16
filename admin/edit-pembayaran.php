@@ -3,9 +3,9 @@ include '../koneksi.php';
 
 // Fetch data for the form
 $id_pembayaran = $_GET['id_pembayaran'];
-$sql = "SELECT pembayaran.*, siswa.nama, kelas.kelas, jurusan.kompetensi_keahlian, spp.tahun, spp.nominal, petugas.nama_petugas 
+$sql = "SELECT pembayaran.*, siswa.nama, siswa.nisn, kelas.kelas, jurusan.kompetensi_keahlian, spp.tahun, spp.nominal, petugas.nama_petugas 
         FROM pembayaran
-        JOIN siswa ON pembayaran.nisn = siswa.nisn
+        JOIN siswa ON pembayaran.id_siswa = siswa.id_siswa
         JOIN kelas ON siswa.id_kelas = kelas.id_kelas
         JOIN jurusan ON siswa.id_jurusan = jurusan.id_jurusan
         JOIN spp ON pembayaran.id_spp = spp.id_spp
@@ -23,8 +23,12 @@ if (!$data) {
 <h5>Halaman Edit Data Pembayaran.</h5>
 <a href="?url=laporan" class="btn btn-primary">KEMBALI</a>
 <hr>
-<form action="?url=proses-edit-pembayaran2&id_pembayaran=<?= $id_pembayaran; ?>" method="post">
-    <div class="form-group mb-2">
+<form action="?url=proses-edit-pembayaran&id_pembayaran=<?= $id_pembayaran; ?>" method="post">
+        <div class="form-group mb-2">
+        <label>ID PEMBAYARAN</label>
+        <input value="<?= $data['id_pembayaran'] ?>" readonly type="number" name="id_pembayaran" class="form-control" required>
+    </div>
+<div class="form-group mb-2">
         <label>NISN</label>
         <input value="<?= $data['nisn'] ?>" readonly type="number" name="nisn" class="form-control" required>
     </div>

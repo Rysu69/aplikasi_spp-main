@@ -1,17 +1,21 @@
 <?php
-$nisn = $_GET['nisn'];
+$id_siswa = $_GET['id_siswa'];
 include '../koneksi.php';
-$sql = "SELECT*FROM siswa,spp,kelas,jurusan WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_jurusan=jurusan.id_jurusan AND siswa.id_spp=spp.id_spp AND nisn='$nisn'";
+$sql = "SELECT*FROM siswa,spp,kelas,jurusan WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_jurusan=jurusan.id_jurusan AND siswa.id_spp=spp.id_spp AND id_siswa='$id_siswa'";
 $query = mysqli_query($koneksi, $sql);
 $data = mysqli_fetch_array($query);
 ?>
 <h5>Halaman Edit Data Siswa.</h5>
 <a href="?url=siswa" class="btn btn-primary">KEMBALI</a>
 <hr>
-<form method="post" action="?url=proses-edit-siswa&old_nisn=<?= $nisn; ?>">
+<form method="post" action="?url=proses-edit-siswa&id_siswa=<?= $id_siswa; ?>">
     <div class="form-group mb-2">
+        <label>ID SISWA</label>
+        <input value="<?= $data['id_siswa'] ?>" readonly type="number" name="id_siswa" class="form-control" required>
+    </div>
+     <div class="form-group mb-2">
         <label>NISN</label>
-        <input value="<?= $data['nisn'] ?>" readonly type="number" name="nisn" class="form-control" required>
+        <input value="<?= $data['nisn'] ?>" type="number" name="nisn" class="form-control" required>
     </div>
     <div class="form-group mb-2">
         <label>NIS</label>

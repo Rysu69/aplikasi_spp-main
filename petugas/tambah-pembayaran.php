@@ -1,19 +1,23 @@
 <?php 
-$nisn = $_GET['nisn'];
+$id_siswa = $_GET['id_siswa'];
 $kekurangan = $_GET['kekurangan'];
 include '../koneksi.php';
-$sql = "select*from siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp AND nisn='$nisn'";
+$sql = "select*from siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp AND id_siswa='$id_siswa'";
     $query = mysqli_query($koneksi, $sql);
     $data = mysqli_fetch_array($query);
 ?>
 <h5>Halaman Pembayaran SPP.</h5>
 <a href="?url=pembayaran" class="btn btn-primary"> KEMBALI </a>
 <hr>
-<form action="?url=proses-tambah-pembayaran&nisn=<?= $nisn; ?>" method="post">
+<form action="?url=proses-tambah-pembayaran&id_siswa=<?= $id_siswa; ?>" method="post">
 <input name="id_spp" value="<?= $data['id_spp'] ?>" type="hidden" class="form-control" required>
     <div class="form-group mb-2">
         <label>Nama Petugas</label>
         <input value="<?= $_SESSION['nama_petugas'] ?>" disabled name="nama_petugas"class="form-control" required>
+    </div>
+        <div class="form-group mb-2">
+        <label>ID SISWA</label>
+        <input readonly name="id_siswa" value="<?= $data['id_siswa'] ?>" type="text" class="form-control" required>
     </div>
     <div class="form-group mb-2">
         <label>NISN</label>

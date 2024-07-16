@@ -42,16 +42,16 @@
                                 <span class='badge text-bg-success'> Lulus </span>
                             <?php else: ?>
                                 <form action="?url=update_kelas" method="post">
-                                    <input type="hidden" name="nisn" value="<?= $data['nisn'] ?>">
+                                    <input type="hidden" name="id_siswa" value="<?= $data['id_siswa'] ?>">
                                     <button type="submit" class="btn btn-primary">Naik Kelas</button>
                                 </form>
                             <?php endif; ?>
                         </td>
                         <td>
-                            <a href="?url=edit-siswa&nisn=<?= $data['nisn'] ?>" class='btn btn-warning'>EDIT</a>
+                            <a href="?url=edit-siswa&id_siswa=<?= $data['id_siswa'] ?>" class='btn btn-warning'>EDIT</a>
                         </td>
                         <td>
-                            <a onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data')" href="?url=hapus-siswa&nisn=<?= $data['nisn'] ?>" class='btn btn-danger'>HAPUS</a>
+                            <a onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data')" href="?url=hapus-siswa&id_siswa=<?= $data['id_siswa'] ?>" class='btn btn-danger'>HAPUS</a>
                         </td>
                     </tr>
                 <?php } ?>

@@ -2,10 +2,10 @@
 include'../koneksi.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nisn = $_POST['nisn'];
+    $id_siswa = $_POST['id_siswa'];
 
     // Fetch the current class of the student
-    $sql = "SELECT id_kelas FROM siswa WHERE nisn = '$nisn'";
+    $sql = "SELECT id_kelas FROM siswa WHERE id_siswa = '$id_siswa'";
     $result = mysqli_query($koneksi, $sql);
     $data = mysqli_fetch_assoc($result);
     $current_kelas = $data['id_kelas'];
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_kelas = $current_kelas + 1;
 
     // Update the class in the database
-    $sql = "UPDATE siswa SET id_kelas = '$new_kelas' WHERE nisn = '$nisn'";
+    $sql = "UPDATE siswa SET id_kelas = '$new_kelas' WHERE id_siswa = '$id_siswa'";
     if (mysqli_query($koneksi, $sql)) {
          header("Location:?url=siswa");
     } else {
