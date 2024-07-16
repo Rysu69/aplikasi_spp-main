@@ -1,7 +1,7 @@
 <?php
 $nisn = $_GET['nisn'];
 include '../koneksi.php';
-$sql = "SELECT*FROM siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp AND nisn='$nisn'";
+$sql = "SELECT*FROM siswa,spp,kelas,jurusan WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_jurusan=jurusan.id_jurusan AND siswa.id_spp=spp.id_spp AND nisn='$nisn'";
 $query = mysqli_query($koneksi, $sql);
 $data = mysqli_fetch_array($query);
 ?>
@@ -11,7 +11,7 @@ $data = mysqli_fetch_array($query);
 <form method="post" action="?url=proses-edit-siswa&nisn=<?= $nisn; ?>">
     <div class="form-group mb-2">
         <label>NISN</label>
-        <input value="<?= $data['nisn'] ?>" readonly type="number" name="nisn" class="form-control" required>
+        <input value="<?= $data['nisn'] ?>" type="number" name="nisn" class="form-control" required>
     </div>
     <div class="form-group mb-2">
         <label>NIS</label>
@@ -31,6 +31,19 @@ $data = mysqli_fetch_array($query);
             foreach($kelas as $data_kelas){
             ?>
             <option value="<?= $data_kelas['id_kelas'] ?>"> <?= $data_kelas['kelas']; ?> </option>
+            <?php } ?>
+        </select>
+    </div>
+    <div class="form-group mb-2">
+        <label>Jurusan</label>
+        <select name="id_jurusan" class="form-control" required>
+            <option value="<?= $data['id_jurusan'] ?>"> <?= $data['kompetensi_keahlian'] ?> </option>
+            <?php
+            include '../koneksi.php';
+            $jurusan = mysqli_query($koneksi, "SELECT*FROM jurusan ORDER BY kompetensi_keahlian ASC");
+            foreach($jurusan as $data_jurusan){
+            ?>
+            <option value="<?= $data_jurusan['id_jurusan'] ?>"> <?= $data_jurusan['kompetensi_keahlian']; ?> </option>
             <?php } ?>
         </select>
     </div>

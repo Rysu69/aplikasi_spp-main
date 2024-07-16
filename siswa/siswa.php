@@ -17,6 +17,11 @@ if(empty($_SESSION['nisn'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siswa - Aplikasi Pembayaran SPP</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+                <style>
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
     
@@ -40,7 +45,7 @@ if(empty($_SESSION['nisn'])) {
             $file = @$_GET['url'];
             if(empty($file)){
                 echo"<h4>Selamat Datang di halaman Siswa. </h4>";
-                echo"Aplikasi Pembayaran SPP digunakan untuk mempermudah dalam mencatat pembayaran siswa / siswi di sekolah";
+                // echo"Aplikasi Pembayaran SPP digunakan untuk mempermudah dalam mencatat pembayaran siswa / siswi di sekolah";
                 echo"<hr>";
                 include "history-pembayaran.php";
             } else {

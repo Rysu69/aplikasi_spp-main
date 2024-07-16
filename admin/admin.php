@@ -25,6 +25,11 @@ if($_SESSION['level']!='admin') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Aplikasi Pembayaran SPP</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <style>
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
     

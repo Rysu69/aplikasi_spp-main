@@ -1,7 +1,7 @@
 <?php 
 $id_petugas = $_GET['id_petugas'];
 include '../koneksi.php';
-$sql = "select*from petugas where id_petugas='$id_petugas'";
+$sql = "SELECT*FROM petugas WHERE id_petugas='$id_petugas'";
     $query = mysqli_query($koneksi, $sql);
     $data = mysqli_fetch_array($query);
 ?>
