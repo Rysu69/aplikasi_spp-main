@@ -1,5 +1,5 @@
 <?php 
-$id_petugas = $_GET['$id_petugas'];
+$id_petugas = $_GET['id_petugas'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $nama_petugas = $_POST['nama_petugas'];

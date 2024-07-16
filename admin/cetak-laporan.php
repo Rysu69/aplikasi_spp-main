@@ -10,6 +10,7 @@ header("Content-Disposition: attachment; filename=Laporan-Pembayaran-SPP.xls");
         <td>NISN</td>
         <td>Nama</td>
         <td>Kelas</td>
+        <td>jurusan</td>
         <td>Tahun SPP</td>
         <td>Nominal Dibayar</td>
         <td>Sudah Dibayar</td>
@@ -19,7 +20,7 @@ header("Content-Disposition: attachment; filename=Laporan-Pembayaran-SPP.xls");
     <?php 
     include'../koneksi.php';
     $no = 1;
-        $sql = "SELECT*FROM pembayaran,siswa,kelas,spp,petugas WHERE pembayaran.nisn=siswa.nisn AND siswa.id_kelas=kelas.id_kelas AND pembayaran.id_spp=spp.id_spp AND pembayaran.id_petugas=petugas.id_petugas ORDER BY tgl_bayar DESC";
+        $sql = "SELECT*FROM pembayaran,siswa,kelas,jurusan,spp,petugas WHERE pembayaran.nisn=siswa.nisn AND siswa.id_kelas=kelas.id_kelas AND siswa.id_jurusan=jurusan.id_jurusan AND pembayaran.id_spp=spp.id_spp AND pembayaran.id_petugas=petugas.id_petugas ORDER BY tgl_bayar DESC";
     $query = mysqli_query($koneksi, $sql);
     foreach($query as $data){
         ?>
@@ -27,7 +28,8 @@ header("Content-Disposition: attachment; filename=Laporan-Pembayaran-SPP.xls");
             <td><?= $no++; ?></td>
             <td><?= $data['nisn']; ?></td>
             <td><?= $data['nama']; ?></td>
-            <td><?= $data['nama_kelas']; ?></td>
+            <td><?= $data['kelas']; ?></td>
+            <td><?= $data['kompetensi_keahlian']; ?></td>
             <td><?= $data['tahun']; ?></td>
             <td><?= number_format($data['nominal'],2,',','.'); ?></td>
             <td><?= number_format($data['jumlah_bayar'],2,',','.'); ?></td>

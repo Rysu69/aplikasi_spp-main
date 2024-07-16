@@ -27,7 +27,7 @@ $sql = "select*from siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND sisw
         <label>Tanggal Bayar</label>
         <input type="date" name="tgl_bayar" class="form-control" required>
     </div>
-    <div class="form-group mb-2">
+    <!-- <div class="form-group mb-2">
         <label>Bulan Bayar</label>
         <select name="bulan_dibayar" class="form-control" required>
         <option value=""> Pilih Bulan Dibayar </option>
@@ -55,7 +55,7 @@ $sql = "select*from siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND sisw
             }
             ?>
         </select>
-    </div>
+    </div> -->
     <div class="form-group mb-2">
         <label>Jumlah Bayar (Jumlah yang harus dibayar adalah <b><?= number_format($kekurangan,2,',','.')?></b>)</label>
         <input type="number" name="jumlah_bayar" max="<?= $kekurangan; ?>" class="form-control" required>

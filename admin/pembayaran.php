@@ -6,6 +6,7 @@
         <td>NISN</td>
         <td>Nama</td>
         <td>Kelas</td>
+        <td>Jurusan</td>
         <td>SPP</td>
         <td>Nominal</td>
         <td>Sudah Dibayar</td>
@@ -16,7 +17,7 @@
     <?php 
     include'../koneksi.php';
     $no = 1;
-    $sql = "select*from siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp ORDER BY nama ASC";
+    $sql = "select*from siswa,spp,kelas,jurusan WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_jurusan=jurusan.id_jurusan AND siswa.id_spp=spp.id_spp ORDER BY nama ASC";
     $query = mysqli_query($koneksi, $sql);
     foreach($query as $data){
         $data_pembayaran = mysqli_query($koneksi,"SELECT SUM(jumlah_bayar) as jumlah_bayar FROM pembayaran WHERE nisn='$data[nisn]'");
@@ -28,7 +29,8 @@
             <td><?= $no++; ?></td>
             <td><?= $data['nisn']; ?></td>
             <td><?= $data['nama']; ?></td>
-            <td><?= $data['nama_kelas']; ?></td>
+            <td><?= $data['kelas']; ?></td>
+            <td><?= $data['kompetensi_keahlian']; ?></td>
             <td><?= $data['tahun']; ?></td>
             <td><?= number_format($data['nominal'],2,',','.'); ?></td>
             <td><?= number_format($sudah_bayar,2,',','.'); ?></td>
