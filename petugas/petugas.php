@@ -41,7 +41,7 @@ if($_SESSION['level']!='petugas') {
         </div>
 
         <a href="petugas.php" class="btn btn-primary"> Petugas</a>
-        <a href="petugas.php?url=pembayaran" class="btn btn-primary"> Pembayaran</a>
+        <!-- <a href="petugas.php?url=pembayaran" class="btn btn-primary"> Pembayaran</a> -->
         <a href="petugas.php?url=logout" class="btn btn-primary"> Logout</a>
 
         
@@ -53,8 +53,9 @@ if($_SESSION['level']!='petugas') {
             
             $file = @$_GET['url'];
             if(empty($file)){
-                echo"<h4>Selamat Datang di halaman Petugas. </h4>";
-                echo"Aplikasi Pembayaran SPP digunakan untuk mempermudah dalam mencatat pembayaran siswa / siswi di sekolah";
+                echo"<h4>Selamat Datang Di Halaman Pembayaran Petugas. </h4> <hr>";
+                // echo"Aplikasi Pembayaran SPP digunakan untuk mempermudah dalam mencatat pembayaran siswa / siswi di sekolah";
+                include 'pembayaran2.php';
             } else {
                 include $file.'.php';
             }

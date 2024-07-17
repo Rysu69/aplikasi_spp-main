@@ -8,6 +8,6 @@ $query = mysqli_query($koneksi,$sql);
 if ($query){
     echo "<script>window.history.go(-1);</script>";
 } else {
-    echo "<script>alert('Maaf Data Tidak Terhapus'); window.history.go(-1);('?url=pembayaran');</script>";
+    echo "<script>alert('Maaf Data Tidak Terhapus'); window.history.go(-1);('?url=petugas');</script>";
 }
 ?>

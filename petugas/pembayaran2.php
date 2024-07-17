@@ -1,5 +1,3 @@
-<h4>Selamat Datang Di Halaman Pembayaran Petugas.</h4>
-<hr>
         <table class="table table-bordered table-hover">
         <thead class="table-secondary">
     <tr class="fw-bold">
