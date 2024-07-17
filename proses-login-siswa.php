@@ -16,7 +16,7 @@ if (mysqli_num_rows($query) > 0) {
     header("Location: siswa/siswa.php?nisn=$nisn&nis=$nis");
 } else {
     echo "<script> 
-    alert('Maaf Anda Gagal Login, Silahkan Ulangi Lagi'); 
+    alert('Maaf NISN dan NIS Tidak Valid, Silahkan Ulangi Lagi'); 
     window.location.assign('index.php'); 
     </script>";
 }
