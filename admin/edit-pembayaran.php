@@ -41,7 +41,7 @@ if (!$data) {
         <input value="<?= $data['kelas'] ?>" readonly type="text" name="kelas" class="form-control" required>
     </div>
     <div class="form-group mb-2">
-        <label>Jurusan</label>
+        <label>Nama Kelas</label>
         <input value="<?= $data['kompetensi_keahlian'] ?>" readonly type="text" name="kompetensi_keahlian" class="form-control" required>
     </div>
     <div class="form-group mb-2">

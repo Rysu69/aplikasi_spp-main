@@ -9,7 +9,7 @@
                     <td>NIS</td>
                     <td>Nama</td>
                     <td>Kelas</td>
-                    <td>Jurusan</td>
+                    <td>Nama Kelas</td>
                     <td>Alamat</td>
                     <td>No Telepon</td>
                     <td>SPP</td>
@@ -38,7 +38,7 @@
                         <td><?= $data['no_telp']; ?></td>
                         <td><?= $data['tahun']; ?> - <?= number_format($data['nominal'],2,',','.'); ?></td>
                         <td>
-                            <?php if ($naikkelas == 3): ?>
+                            <?php if ($naikkelas == 6): ?>
                                 <span class='badge text-bg-success'> Lulus </span>
                             <?php else: ?>
                                 <form action="?url=update_kelas" method="post">

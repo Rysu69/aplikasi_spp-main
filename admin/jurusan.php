@@ -1,11 +1,11 @@
-<h5>Halaman Data jurusan.</h5>
-<a href="?url=tambah-jurusan" class="btn btn-primary"> Tambah Jurusan </a>
+<h5>Halaman Data Kelas.</h5>
+<a href="?url=tambah-jurusan" class="btn btn-primary"> Tambah Kelas </a>
 <hr>
         <table class="table table-bordered table-hover">
         <thead class="table-secondary">
     <tr class="fw-bold">
         <td>No</td>
-        <td>Nama Jurusan</td>
+        <td>Nama Kelas</td>
         <td>Edit</td>
         <td>Hapus</td>  
     </tr>

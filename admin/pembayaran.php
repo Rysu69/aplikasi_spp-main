@@ -7,7 +7,7 @@
         <td>NISN</td>
         <td>Nama</td>
         <td>Kelas</td>
-        <td>Jurusan</td>
+        <td>Nama Kelas</td>
         <td>SPP</td>
         <td>Nominal</td>
         <td>Sudah Dibayar</td>
@@ -41,7 +41,7 @@
                 if($kekurangan==0){
                     echo"<span class='badge text-bg-success'> Sudah Lunas </span>";
                 }else { ?>
-                    <a href="?url=tambah-pembayaran&id_siswa=<?= $data['id_siswa'] ?>&kekurangan=<?= $kekurangan ?>" class="btn btn-danger"> Pilih & Bayar </a>
+                    <a href="?url=tambah-pembayaran&id_siswa=<?= $data['id_siswa'] ?>&kekurangan=<?= $kekurangan ?>" class="btn btn-warning"> Pilih & Bayar </a>
                 <?php } ?>
             </td>
             <td>

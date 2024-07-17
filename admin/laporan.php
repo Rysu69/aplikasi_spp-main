@@ -8,7 +8,7 @@
         <td>Nama</td>  
         <td>NISN</td>
         <td>Kelas</td>
-        <td>Jurusan</td>
+        <td>Nama Kelas</td>
         <td>Tahun SPP</td>
         <td>Nominal Dibayar</td>
         <td>Sudah Dibayar</td>

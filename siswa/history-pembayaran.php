@@ -30,7 +30,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             <td>NIS</td>
             <td>Nama</td>
             <td>Kelas</td>
-            <td>Jurusan</td>
+            <td>Nama Kelas</td>
             <td>Tahun SPP</td>
             <td>Nominal Dibayar</td>
             <td>Sudah Dibayar</td>

@@ -39,7 +39,7 @@ $data = mysqli_fetch_array($query);
         </select>
     </div>
     <div class="form-group mb-2">
-        <label>Jurusan</label>
+        <label>Nama Kelas</label>
         <select name="id_jurusan" class="form-control" required>
             <option value="<?= $data['id_jurusan'] ?>"> <?= $data['kompetensi_keahlian'] ?> </option>
             <?php

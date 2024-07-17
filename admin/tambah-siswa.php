@@ -28,9 +28,9 @@
         </select>
     </div>
     <div class="form-group mb-2">
-        <label>jurusan</label>
+        <label>Nama Kelas</label>
         <select name="id_jurusan" class="form-control" required>
-            <option value=""> Pilih jurusan </option>
+            <option value=""> Pilih Kelas </option>
             <?php 
                 include'../koneksi.php';
                 $jurusan = mysqli_query($koneksi,"SELECT*FROM jurusan ORDER BY kompetensi_keahlian ASC");

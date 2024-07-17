@@ -35,7 +35,7 @@ if($_SESSION['level']!='petugas') {
     
     <div class="container mt-5">
         
-        <h3>Aplikasi Pembayaran SPP.</h3>
+        <h3>Aplikasi Pembayaran SPP SD Islam AL-Quds.</h3>
         <div class="alert alert-info">
             Anda Login Sebagai Petugas <b><?= $_SESSION['nama_petugas'] ?></b> Aplikasi Pembayaran SPP.
         </div>

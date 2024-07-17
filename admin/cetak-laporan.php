@@ -11,7 +11,7 @@ header("Content-Disposition: attachment; filename=Laporan-Pembayaran-SPP.xls");
             <th>NISN</th>
             <th>Nama</th>
             <th>Kelas</th>
-            <th>Jurusan</th>
+            <th>Nama Kelas</th>
             <th>Tahun SPP</th>
             <th>Nominal Dibayar</th>
             <th>Sudah Dibayar</th>

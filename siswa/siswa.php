@@ -34,7 +34,7 @@ $nis = $_SESSION['nis'];
 </head>
 <body>
     <div class="container mt-5">
-        <h3>Aplikasi Pembayaran SPP.</h3>
+        <h3>Aplikasi Pembayaran SPP SD Islam AL-Quds.</h3>
         <div class="alert alert-info">
             Anda Login Sebagai Siswa <b><?= $_SESSION['nama'] ?></b> Aplikasi Pembayaran SPP.
         </div>

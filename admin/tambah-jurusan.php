@@ -1,9 +1,9 @@
-<h5>Halaman Tambah Data Jurusan.</h5>
+<h5>Halaman Tambah Data Kelas.</h5>
 <a href="?url=jurusan" class="btn btn-primary"> KEMBALI </a>
 <hr>
 <form action="?url=proses-tambah-jurusan" method="post">
     <div class="form-group mb-2">
-        <label>Nama jurusan</label>
+        <label>Nama Kelas</label>
         <input type="text" name="kompetensi_keahlian" class="form-control" required>
     </div>
     <div class="form-group">
