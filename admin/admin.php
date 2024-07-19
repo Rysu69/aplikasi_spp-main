@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+/**
+ * Check if the user is logged in and has administrator privileges
+ */
 if(empty($_SESSION['id_petugas'])) {
     echo "<script>
     alert('Maaf anda belum login');
@@ -17,7 +20,6 @@ if($_SESSION['level']!='admin') {
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +27,7 @@ if($_SESSION['level']!='admin') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Aplikasi Pembayaran SPP</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <style>
+    <style>
         body {
             background-color: #f8f9fa;
         }
@@ -40,6 +42,7 @@ if($_SESSION['level']!='admin') {
             Anda Login Sebagai <b>ADMINISTRATOR</b> Aplikasi Pembayaran SPP.
         </div>
 
+        <!-- Menu options -->
         <a href="admin.php" class="btn btn-primary"> Administrator</a>
         <a href="admin.php?url=spp" class="btn btn-primary"> SPP</a>
         <!-- <a href="admin.php?url=kelas" class="btn btn-primary"> Kelas</a> -->
@@ -54,22 +57,25 @@ if($_SESSION['level']!='admin') {
         <div class="card mt-2">
             <div class="card-body">
                 
-                <!-- isi web  -->
+                <!-- Display content based on URL parameter -->
                 <?php 
-            
-            $file = @$_GET['url'];
-            if(empty($file)){
-                echo"<h4>Selamat Datang di halaman Administrator. </h4>";
-                // echo"Aplikasi Pembayaran SPP digunakan untuk mempermudah dalam mencatat pembayaran siswa / siswi di sekolah";
-                include "beranda.php";
-            } else {
-                include $file.'.php';
-            }
-            
-            ?>
-
+                /**
+                 * Get the URL parameter and include the corresponding file
+                 *
+                 * @param string $file URL parameter
+                 */
+                $file = @$_GET['url'];
+                if(empty($file)){
+                    echo"<h4>Selamat Datang di halaman Administrator. </h4>";
+                    // echo"Aplikasi Pembayaran SPP digunakan untuk mempermudah dalam mencatat pembayaran siswa / siswi di sekolah";
+                    include "beranda.php";
+                } else {
+                    include $file.'.php';
+                }
+               ?>
+                
+            </div>
         </div>
-    </div>
 
     </div>
 
