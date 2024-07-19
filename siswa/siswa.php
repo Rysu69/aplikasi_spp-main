@@ -40,7 +40,7 @@ $nis = $_SESSION['nis'];
         </div>
 
         <a href="siswa.php" class="btn btn-primary">Siswa</a>
-        <a href="siswa.php?url=logout" class="btn btn-primary">Logout</a>
+        <a href="siswa.php?url=logout" class="btn btn-danger">Logout</a>
 
         <div class="card mt-2">
             <div class="card-body">
