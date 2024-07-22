@@ -6,7 +6,7 @@
     <tr class="fw-bold">
         <td>No</td>
         <td>Username</td>
-        <td>Password</td>
+        <!-- <td>Password</td> -->
         <td>Nama Petugas</td>
         <td>Level</td>
         <td>Edit</td>
@@ -22,7 +22,7 @@
         <tr>
             <td><?= $no++; ?></td>
             <td><?= $data['username']; ?></td>
-            <td><?= $data['password']; ?></td>
+            <!-- <td><?= $data['password']; ?></td> -->
             <td><?= $data['nama_petugas']; ?></td>
             <td><?= $data['level']; ?></td>
             <td>

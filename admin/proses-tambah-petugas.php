@@ -6,6 +6,7 @@ $nama_petugas = $_POST['nama_petugas'];
 $level = $_POST['level'];
 
 include'../koneksi.php';
+    $password = md5($_POST['password']);
 $sql = "INSERT INTO petugas(username,password,nama_petugas,level) VALUES('$username','$password','$nama_petugas','$level')";
 $query = mysqli_query($koneksi,$sql);
 if ($query){

@@ -1,27 +1,36 @@
 <?php 
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+session_start();
+require_once("koneksi.php");
 
-include 'koneksi.php';
-$sql = "SELECT*FROM petugas WHERE username= '$username' AND password= '$password'";
-$query = mysqli_query($koneksi, $sql);
-if(mysqli_num_rows($query)>0) {
-    $data = mysqli_fetch_array($query);
-    session_start();
-    $_SESSION['id_petugas'] = $data['id_petugas'];
-    $_SESSION['nama_petugas'] = $data['nama_petugas'];
-    $_SESSION['level'] = $data['level'];
-    if($data['level']=='admin') {
-        header('Location:admin/admin.php');
-    }elseif($data['level']=='petugas') {
-        header('Location:petugas/petugas.php');
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = md5($_POST["password"]); // Menggunakan MD5 untuk hash password
+
+    $query = "SELECT * FROM petugas WHERE username = '$username' AND password = '$password'";
+    $result = mysqli_query($koneksi, $query);
+
+    if ($result && mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+
+        $_SESSION['login_type'] = "login";
+        $_SESSION["id_petugas"] = $row["id_petugas"];
+        $_SESSION["nama_petugas"] = $row["nama_petugas"];
+        $_SESSION["level"] = $row["level"];
+
+        echo '<script language="javascript" type="text/javascript">
+            alert("Selamat Datang '.$_SESSION["nama_petugas"].', Anda Berhasil Login!");</script>';
+
+        if ($row["level"] == "admin") {
+            echo "<meta http-equiv='refresh' content='0; url=admin/admin.php'>"; // Redirect ke halaman admin
+        } elseif ($row["level"] == "petugas") {
+            echo "<meta http-equiv='refresh' content='0; url=petugas/petugas.php'>"; // Redirect ke halaman petugas
+        }
+        exit();
+    } else {
+        echo '<script language="javascript" type="text/javascript">
+            alert("Maaf Username dan Password Salah.!");</script>';
+        echo "<meta http-equiv='refresh' content='0; url=index.php'>";
     }
-}else {
-    echo "<script>
-    alert('Maaf Login Gagal, Silahkan Ulangi Lagi');
-    window.location.assign('index2.php');
-    </script>";
 }
-
 ?>

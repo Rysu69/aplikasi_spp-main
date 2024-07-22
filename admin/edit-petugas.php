@@ -8,7 +8,7 @@ $sql = "SELECT*FROM petugas WHERE id_petugas='$id_petugas'";
 <h5>Halaman Edit Petugas.</h5>
 <a href="?url=petugas" class="btn btn-primary"> KEMBALI </a>
 <hr>
-<form action="?url=proses-edit-petugas&id_petugas=<?= $id_petugas; ?>" method="post">
+<form action="?url=proses-petugas&id_petugas=<?= $id_petugas; ?>" method="post">
     <div class="form-group mb-2">
         <label>Username</label>
         <input value="<?= $data['username'] ?>" type="text" name="username" class="form-control" required>
