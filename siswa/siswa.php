@@ -28,7 +28,7 @@ $nis = $_SESSION['nis'];
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #f8f9fc;
         }
     </style>
 </head>
