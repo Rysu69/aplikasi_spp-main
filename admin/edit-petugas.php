@@ -15,7 +15,7 @@ $sql = "SELECT*FROM petugas WHERE id_petugas='$id_petugas'";
     </div>
     <div class="form-group mb-2">
         <label>password</label>
-        <input value="<?= $data['password'] ?>" type="text" name="password" class="form-control" required>
+        <input placeholder="masukan password" type="password" name="password" class="form-control" required>
     </div>
     <div class="form-group mb-2">
         <label>Nama Petugas</label>
