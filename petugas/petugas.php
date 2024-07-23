@@ -42,7 +42,7 @@ if($_SESSION['level']!='petugas') {
 
         <a href="petugas.php" class="btn btn-primary"> Petugas</a>
         <!-- <a href="petugas.php?url=pembayaran" class="btn btn-primary"> Pembayaran</a> -->
-        <a href="petugas.php?url=logout" class="btn btn-danger"> Logout</a>
+        <a onclick="return confirm('Apakah Anda Yakin Ingin Logout')" href="petugas.php?url=logout" class="btn btn-danger"> Logout</a>
 
         
         <div class="card mt-2">

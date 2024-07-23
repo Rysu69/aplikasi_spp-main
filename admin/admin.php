@@ -51,7 +51,7 @@ if($_SESSION['level']!='admin') {
         <a href="admin.php?url=petugas" class="btn btn-primary"> Petugas</a>
         <a href="admin.php?url=pembayaran" class="btn btn-primary"> Pembayaran</a>
         <a href="admin.php?url=laporan" class="btn btn-primary"> Laporan</a>
-        <a href="admin.php?url=logout" class="btn btn-danger"> Logout</a>
+        <a onclick="return confirm('Apakah Anda Yakin Ingin Logout')" href="admin.php?url=logout" class="btn btn-danger"> Logout</a>
 
         
         <div class="card mt-2">
